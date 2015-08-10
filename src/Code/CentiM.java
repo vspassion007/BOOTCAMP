@@ -1,25 +1,24 @@
 package Code;
 
-public class CentiM implements Quantity{
+public class CentiM implements Quantity {
 
 	private double value;
+
+	public CentiM() {
+	}
 
 	public CentiM(double value) {
 		super();
 		this.value = value;
 	}
-	
-	
-	public double ToCenti()
-	{
+
+	public double toCenti() {
 		return value;
 	}
 
-
 	@Override
-	public double FromCenti() {
-		// TODO Auto-generated method stub
-		return 0;
+	public Quantity convertFrom(Quantity toObjVal) {
+		return new CentiM(toObjVal.toCenti());
 	}
-	
+
 }

@@ -2,6 +2,6 @@ package Code;
 
 public interface Quantity {
 	
-	public double ToCenti();
-	public double FromCenti();	
+	public double toCenti();
+	public Quantity convertFrom(Quantity toObjVal);
 }

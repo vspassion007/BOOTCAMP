@@ -1,27 +1,25 @@
 package Code;
 
-public class Meter implements Quantity{
+public class Meter implements Quantity {
 
 	private double value;
-	private final double Factor_CentiToMeter = 100.0;
+	private final double Factor_ToCenti = 100.0;
 
-	
+	public Meter() {
+	}
+
 	public Meter(double value) {
 		super();
 		this.value = value;
 	}
-	
-	public double ToCenti()
-	{
-		return value*Factor_CentiToMeter;
+
+	public double toCenti() {
+		return value * Factor_ToCenti;
 	}
 
 	@Override
-	public double FromCenti() {
-		// TODO Auto-generated method stub
-		return 0;
+	public Quantity convertFrom(Quantity toObjVal) {
+		return new Meter(toObjVal.toCenti() / Factor_ToCenti);
 	}
-	
-	
-	
+
 }

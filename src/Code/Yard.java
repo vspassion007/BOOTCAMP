@@ -1,14 +1,14 @@
 package Code;
 
-public class Inch implements Quantity {
+public class Yard implements Quantity {
 
 	private double value;
-	private final double Factor_ToCenti = 2.53;
+	private final double Factor_ToCenti = 91.08;
 
-	public Inch() {
+	public Yard() {
 	}
 
-	public Inch(double value) {
+	public Yard(double value) {
 		super();
 		this.value = value;
 	}
@@ -20,7 +20,7 @@ public class Inch implements Quantity {
 
 	@Override
 	public Quantity convertFrom(Quantity toObjVal) {
-		return new Inch(toObjVal.toCenti() / Factor_ToCenti);
+		return new Yard(toObjVal.toCenti() / Factor_ToCenti);
 	}
 
 }
