@@ -23,7 +23,7 @@ public class CentiM implements Quantity {
 
 	@Override
 	public Quantity addThis(Quantity toObjVal) {
-		return new CentiM( (this.toCenti()+toObjVal.toCenti()));
+		return new CentiM(this.toCenti()+toObjVal.toCenti());
 	}
 
 }
