@@ -23,4 +23,9 @@ public class Foot implements Quantity {
 		return new Foot(toObjVal.toCenti() / Factor_ToCenti);
 	}
 
+	@Override
+	public Quantity addThis(Quantity toObjVal) {
+		return new Foot( (this.toCenti()+toObjVal.toCenti()) / Factor_ToCenti);
+	}
+
 }

@@ -23,4 +23,9 @@ public class Inch implements Quantity {
 		return new Inch(toObjVal.toCenti() / Factor_ToCenti);
 	}
 
+	@Override
+	public Quantity addThis(Quantity toObjVal) {
+		return new Inch( (this.toCenti()+toObjVal.toCenti()) / Factor_ToCenti);
+	}
+
 }

@@ -22,4 +22,9 @@ public class Meter implements Quantity {
 		return new Meter(toObjVal.toCenti() / Factor_ToCenti);
 	}
 
+	@Override
+	public Quantity addThis(Quantity toObjVal) {
+		return new Meter( (this.toCenti()+toObjVal.toCenti()) / Factor_ToCenti);
+	}
+
 }

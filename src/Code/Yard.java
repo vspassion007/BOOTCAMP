@@ -23,4 +23,10 @@ public class Yard implements Quantity {
 		return new Yard(toObjVal.toCenti() / Factor_ToCenti);
 	}
 
+	@Override
+	public Quantity addThis(Quantity toObjVal) {
+		System.out.println((this.toCenti()+toObjVal.toCenti())/ Factor_ToCenti);
+		return new Yard( (this.toCenti()+toObjVal.toCenti()) / Factor_ToCenti);
+	}
+
 }

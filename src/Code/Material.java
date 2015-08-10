@@ -9,4 +9,8 @@ public class Material {
 	public Quantity convertQuantity(Quantity first, Quantity second) {
 		return second.convertFrom(first);
 	}
+	
+	public Quantity addQuantity(Quantity first, Quantity second) {
+		return first.addThis(second);
+	}
 }
