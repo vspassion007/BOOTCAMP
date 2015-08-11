@@ -17,6 +17,6 @@ public class Fahrenheit implements QuantityTemperature {
 	@Override
 	public QuantityTemperature convertFrom(QuantityTemperature toObjVal) {
 		System.out.println(((toObjVal.toBaseUnit() * 9) / 5) + 32);
-		return new Degree(((toObjVal.toBaseUnit() * 9) / 5) + 32);
+		return new Fahrenheit(((toObjVal.toBaseUnit() * 9) / 5) + 32);
 	}
 }
