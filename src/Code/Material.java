@@ -2,15 +2,15 @@ package Code;
 
 public class Material {
 
-	public boolean quantityEqual(Quantity first, Quantity second) {
-		return first.toCenti() == second.toCenti();
+	public boolean quantityEqual(QuantityLength first, QuantityLength second) {
+		return first.toBaseUnit() == second.toBaseUnit();
 	}
 
-	public Quantity convertQuantity(Quantity first, Quantity second) {
+	public QuantityLength convertQuantity(QuantityLength first, QuantityLength second) {
 		return second.convertFrom(first);
 	}
 	
-	public Quantity addQuantity(Quantity first, Quantity second) {
+	public QuantityLength addQuantity(QuantityLength first, QuantityLength second) {
 		return first.addThis(second);
 	}
 }

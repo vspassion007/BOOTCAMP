@@ -1,6 +1,6 @@
 package Code;
 
-public class Inch implements Quantity {
+public class Inch implements QuantityLength {
 
 	private double value;
 	private final double Factor_ToCenti = 2.53;
@@ -14,18 +14,18 @@ public class Inch implements Quantity {
 	}
 
 	@Override
-	public double toCenti() {
+	public double toBaseUnit() {
 		return value * Factor_ToCenti;
 	}
 
 	@Override
-	public Quantity convertFrom(Quantity toObjVal) {
-		return new Inch(toObjVal.toCenti() / Factor_ToCenti);
+	public QuantityLength convertFrom(QuantityLength toObjVal) {
+		return new Inch(toObjVal.toBaseUnit() / Factor_ToCenti);
 	}
 
 	@Override
-	public Quantity addThis(Quantity toObjVal) {
-		return new Inch( (this.toCenti()+toObjVal.toCenti()) / Factor_ToCenti);
+	public QuantityLength addThis(QuantityLength toObjVal) {
+		return new Inch( (this.toBaseUnit()+toObjVal.toBaseUnit()) / Factor_ToCenti);
 	}
 
 }

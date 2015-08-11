@@ -1,6 +1,6 @@
 package Code;
 
-public class Meter implements Quantity {
+public class Meter implements QuantityLength {
 
 	private double value;
 	private final double Factor_ToCenti = 100.0;
@@ -13,18 +13,18 @@ public class Meter implements Quantity {
 		this.value = value;
 	}
 
-	public double toCenti() {
+	public double toBaseUnit() {
 		return value * Factor_ToCenti;
 	}
 
 	@Override
-	public Quantity convertFrom(Quantity toObjVal) {
-		return new Meter(toObjVal.toCenti() / Factor_ToCenti);
+	public QuantityLength convertFrom(QuantityLength toObjVal) {
+		return new Meter(toObjVal.toBaseUnit() / Factor_ToCenti);
 	}
 
 	@Override
-	public Quantity addThis(Quantity toObjVal) {
-		return new Meter( (this.toCenti()+toObjVal.toCenti()) / Factor_ToCenti);
+	public QuantityLength addThis(QuantityLength toObjVal) {
+		return new Meter( (this.toBaseUnit()+toObjVal.toBaseUnit()) / Factor_ToCenti);
 	}
 
 }

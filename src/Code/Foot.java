@@ -1,6 +1,6 @@
 package Code;
 
-public class Foot implements Quantity {
+public class Foot implements QuantityLength {
 
 	private double value;
 	private final double Factor_ToCenti = 30.36;
@@ -14,18 +14,18 @@ public class Foot implements Quantity {
 	}
 
 	@Override
-	public double toCenti() {
+	public double toBaseUnit() {
 		return value * Factor_ToCenti;
 	}
 
 	@Override
-	public Quantity convertFrom(Quantity toObjVal) {
-		return new Foot(toObjVal.toCenti() / Factor_ToCenti);
+	public QuantityLength convertFrom(QuantityLength toObjVal) {
+		return new Foot(toObjVal.toBaseUnit() / Factor_ToCenti);
 	}
 
 	@Override
-	public Quantity addThis(Quantity toObjVal) {
-		return new Foot( (this.toCenti()+toObjVal.toCenti()) / Factor_ToCenti);
+	public QuantityLength addThis(QuantityLength toObjVal) {
+		return new Foot( (this.toBaseUnit()+toObjVal.toBaseUnit()) / Factor_ToCenti);
 	}
 
 }

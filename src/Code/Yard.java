@@ -1,6 +1,6 @@
 package Code;
 
-public class Yard implements Quantity {
+public class Yard implements QuantityLength {
 
 	private double value;
 	private final double Factor_ToCenti = 91.08;
@@ -14,19 +14,19 @@ public class Yard implements Quantity {
 	}
 
 	@Override
-	public double toCenti() {
+	public double toBaseUnit() {
 		return value * Factor_ToCenti;
 	}
 
 	@Override
-	public Quantity convertFrom(Quantity toObjVal) {
-		return new Yard(toObjVal.toCenti() / Factor_ToCenti);
+	public QuantityLength convertFrom(QuantityLength toObjVal) {
+		return new Yard(toObjVal.toBaseUnit() / Factor_ToCenti);
 	}
 
 	@Override
-	public Quantity addThis(Quantity toObjVal) {
-		System.out.println((this.toCenti()+toObjVal.toCenti())/ Factor_ToCenti);
-		return new Yard( (this.toCenti()+toObjVal.toCenti()) / Factor_ToCenti);
+	public QuantityLength addThis(QuantityLength toObjVal) {
+		System.out.println((this.toBaseUnit()+toObjVal.toBaseUnit())/ Factor_ToCenti);
+		return new Yard( (this.toBaseUnit()+toObjVal.toBaseUnit()) / Factor_ToCenti);
 	}
 
 }

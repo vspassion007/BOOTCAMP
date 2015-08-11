@@ -1,6 +1,6 @@
 package Code;
 
-public class CentiM implements Quantity {
+public class CentiM implements QuantityLength {
 
 	private double value;
 
@@ -12,18 +12,18 @@ public class CentiM implements Quantity {
 		this.value = value;
 	}
 
-	public double toCenti() {
+	public double toBaseUnit() {
 		return value;
 	}
 
 	@Override
-	public Quantity convertFrom(Quantity toObjVal) {
-		return new CentiM(toObjVal.toCenti());
+	public QuantityLength convertFrom(QuantityLength toObjVal) {
+		return new CentiM(toObjVal.toBaseUnit());
 	}
 
 	@Override
-	public Quantity addThis(Quantity toObjVal) {
-		return new CentiM(this.toCenti()+toObjVal.toCenti());
+	public QuantityLength addThis(QuantityLength toObjVal) {
+		return new CentiM(this.toBaseUnit()+toObjVal.toBaseUnit());
 	}
 
 }
